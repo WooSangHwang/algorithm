@@ -7,14 +7,14 @@ public class Main {
 
     public String solution(String str) {
 
-        String anwser = "YES";
+        String answser = "YES";
         str = str.toLowerCase().replaceAll("[^a-z]","");
 
         for (int j = 0; j < str.length() / 2; j++) {
 //                System.out.println(strArr[i].charAt(j));
 //                System.out.println(strArr[strArr.length - 1 - i].charAt(strArr[i].length() -1 - j));
             if (str.charAt(j) != str.charAt(str.length() - 1 - j)) {
-                anwser = "NO";
+                answser = "NO";
             }
         }
 //        String reverseStr = new StringBuilder(str).reverse().toString();
@@ -24,7 +24,7 @@ public class Main {
 
         //StringBuiler(str).rev
 
-        return anwser;
+        return answser;
     }
 
     public static void main(String[] args) {
