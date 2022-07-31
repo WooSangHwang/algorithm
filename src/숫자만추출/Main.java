@@ -11,6 +11,7 @@ public class Main {
 //        answer = Integer.parseInt(str);
 //        2안
         for (char c : str.toCharArray()) {
+//            Character.isDefined(c) // 문자가 숫지인지 판별하는 메서드.
             if (48 <= c && c <= 57) {
                 answer = answer * 10 + (c - 48);
             }
