@@ -1,35 +1,28 @@
 package 임시반장정하기;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
     public int solution(int cnt, int[][] arr) {
         int answer = 0;
-        int tmp = 0;
-        int[] tmpAnswer = new int[cnt];
+        int size = 0;
+        Map<Integer, HashSet<Integer>> map = new HashMap<>();
         for (int i = 0; i < cnt; i++) {
+            map.put(i, new HashSet<>());
             for (int j = 0; j < 5; j++) {
-                int sum = 0;
                 for (int k = 0; k < cnt; k++) {
                     if (arr[i][j] == arr[k][j]) {
-                        sum++;
+                        map.get(i).add(k);
                     }
                 }
-                tmpAnswer[i] += sum;
             }
-            if (tmp < tmpAnswer[i]) {
-                tmp = tmpAnswer[i];
-                answer = i+1;
-
+            if (size < map.get(i).size()) {
+                size = map.get(i).size();
+                answer = i + 1;
             }
-
         }
-        System.out.println("");
-        for (int i : tmpAnswer) {
-            System.out.print(i + " ");
-        }
+//        System.out.println(map);
 
         return answer;
     }
